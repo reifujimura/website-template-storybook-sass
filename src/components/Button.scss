@@ -1,0 +1,11 @@
+@import "../scss/theme.scss";
+.btn {
+  background-color: transparent;
+  border: 2px solid var(--color-primary-500);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--color-text);
+  &:hover {
+    cursor: pointer;
+  }
+}

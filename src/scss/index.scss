@@ -1,0 +1,9 @@
+@import "./theme.scss";
+
+html,
+body,
+#root {
+  font-family: serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
