@@ -10,4 +10,15 @@ module.exports = {
   core: {
     builder: "@storybook/builder-webpack5",
   },
+  webpackFinal: async (config) => {
+    config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/];
+    config.module.rules[0].use[0].options.plugins.push([
+      require.resolve("babel-plugin-remove-graphql-queries"),
+      {
+        stage: config.mode === `development` ? "develop-html" : "build-html",
+        staticQueryDir: "page-data/sq/d",
+      },
+    ]);
+    return config;
+  },
 };
